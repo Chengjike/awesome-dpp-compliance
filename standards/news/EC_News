@@ -12,3 +12,7 @@ DPP的SAMM（Semantic Aspect Meta Model，语义面向元模型
 
 https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/6.1.0/BatteryPass.ttl
 电池的语义库定义
+
+
+https://github.com/batterypass/BatteryPassDataModel/tree/main
+JTC24 给出的DPP 电池的语义库
