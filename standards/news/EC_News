@@ -9,3 +9,6 @@ Eclipse 基金会旗下的一个官方顶级开源项目群（Organization / 组
 
 https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.generic.digital_product_passport/7.0.0/DigitalProductPassport.ttl
 DPP的SAMM（Semantic Aspect Meta Model，语义面向元模型
+
+https://github.com/eclipse-tractusx/sldt-semantic-models/blob/main/io.catenax.battery.battery_pass/6.1.0/BatteryPass.ttl
+电池的语义库定义
