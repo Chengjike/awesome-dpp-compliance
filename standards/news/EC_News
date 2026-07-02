@@ -27,3 +27,32 @@ https://single-market-economy.ec.europa.eu/events/digital-product-passport-batte
 
 
 https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-registers-search-company-eu_en
+
+
+中方自建 Test Adapter】           【子公司法人代表 (EUDI APP)】         【欧盟中央注册局 (EC Registry)】
+        │                                        │                                    │
+   (1)  ├─► 制作 OIDC4VP 二维码                       │                                    │
+        │   (包含系统DID与数据草稿标识)           │                                    │
+        │                                        │                                    │
+   (2)  │─── 发送二维码/链接给老板 ──────────────►│                                    │
+        │                                        │                                    │
+   (3)  │                                        ├─► 扫描二维码                        │
+        │                                        │   (唤醒 EUDI 钱包)                  │
+        │                                        │                                    │
+   (4)  │◄── 钱包后台默默调用你的接口(Get Request) ──────┤                                    │
+        │                                        │                                    │
+   (5)  ├─► 把 IT 填好的 Profile JSON 吐给钱包 ──►│                                    │
+        │                                        │                                    │
+        │                                        ▼                                    │
+        │                               【老板手机屏幕弹窗提示】                              │
+        │                               “是否代表公司一键向欧盟提报？”                         │
+        │                               [老板刷脸/按指纹通过]                                 │
+        │                                钱包芯片调用企业 QSeal 签名                            │
+        │                                        │                                    │
+   (6)  │                                        └─► 自动将[数据+QSeal签名] POST 提报 ─►│
+        │                                            (直撞欧盟注册局开放 API)          │
+        │                                                                             │
+        │                                                                             ▼
+        │                                                                    【注册局验签落库】
+        │                                                                     企业状态变更为：
+        │                                                                     ✅ VERIFIED
