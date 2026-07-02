@@ -56,3 +56,27 @@ https://e-justice.europa.eu/topics/registers-business-insolvency-land/business-r
         │                                                                    【注册局验签落库】
         │                                                                     企业状态变更为：
         │                                                                     ✅ VERIFIED
+
+
+让开发人员直接去 GitHub 找符合 OIDC4VP / OpenID4VP 标准的开源第三方库（如 SD-JWT 或 OIDC4VP Spec Compliance 库）。
+
+欧盟官方（European Commission）的 EUDI 官方开源仓库
+这是欧盟为了强推 eIDAS 2.0 钱包，由欧盟委员会（EC）官方出资并组织维护的“标准参考实现（Reference Implementation）”。所有欧洲的信托服务商、欧盟中央注册局（EC Registry）在测试连通性时，都是以这个仓库的代码为准。
+
+项目组名称（GitHub Organization）：eu-digital-identity-wallet
+
+开发团队核心 Repo：
+
+Java/Kotlin 开发者推荐（适合国内大多数车企技术栈）：
+
+eudi-lib-jvm-openid4vp-kt：这是欧盟官方维护的、基于 JVM 生态（Java/Kotlin）的 OpenID4VP 核心解析与验证库。它能极其标准地生成我们前文提到的 Request Object 以及解析 OIDC4VP 报文。
+
+eudi-srv-verifier-endpoint：这是欧盟官方直接写好的“验证方端点服务（Verifier Endpoint）”。你们系统在做 API 发行、接受钱包回传时，可以直接参考甚至复用这个服务。
+
+分量有多重：这是欧盟的“亲儿子”仓库。 你们如果直接引入欧盟官方的 JVM 依赖库，未来的技术合规审计报告可以直接写上“Identity layer aligns with official EU-Digital-Identity-Wallet JVM reference implementation”，欧洲审计官挑不出任何毛病。
+
+接让你们的开发组长（Tech Lead）上 GitHub 搜索这两个专区。
+
+如果是 Java 团队：去 github.com/eu-digital-identity-wallet 捞 eudi-lib-jvm-openid4vp-kt。直接在 Maven / Gradle 里引入他们的官方依赖包。
+
+需要参考商业样板间：除了上述纯官方的底层协议库，还可以去看欧洲顶级 DPP 联盟都在用的商业开源底座 walt-id（github.com/walt-id/waltid-identity-wallet）或 Sphereon（github.com/Sphereon-Opensource）。这两个是标准的中间件，把 OpenID4VP 协议和企业 QSeal 盖章等业务封装成了非常好用的 RESTFUL API。
